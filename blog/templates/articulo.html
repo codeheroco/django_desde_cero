@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Mi primer Blog</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mi primer blog</h1>
+    <hr />
+        <div class="art">
+        <h2>{{ articulo.titulo }}</h2>
+        <h3>Publicado el {{ articulo.fecha }} por {{ articulo.autor }}</h3>
+        <p>{{ articulo.texto }}</p>
+        </div>
+
+<h2>Comentarios Disponibles</h2>
+{% for c in articulo.comentario_set.all %}
+	<p>{{ c.nombre}}: {{c.cuerpo}}</p>
+{% endfor %}
+
+
+<p><a href="/articulos/agregar_comentario/{{ articulo.id }}">Agregar Comentario</a></p>
+
+</div>
+
+</body>
+
+
+
+</html>

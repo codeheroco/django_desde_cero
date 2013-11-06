@@ -1,0 +1,7 @@
+<form action="/articulos/agregar_comentario/{{ articulo.id }}/" method="post">{% csrf_token %}
+<ul>
+{{ form.as_ul }}
+</ul>
+
+<input type="submit" name="submit" value="Agregar">
+</form>
